@@ -2,6 +2,7 @@
 
 #app {
   width: 100vw;
+  height: 100%;
   margin: 0 auto;
   font-weight: normal;
   /* background: rgb(2, 1, 18);
@@ -9,8 +10,8 @@
 }
 body {
   display: flex;
-  justify-content: space-between;
-  /* place-items: center; */
+  /* justify-content: space-between; */
+  place-items: center;
 }
 
 

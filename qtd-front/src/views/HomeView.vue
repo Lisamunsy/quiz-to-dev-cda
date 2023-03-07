@@ -3,13 +3,13 @@ import Landing from '../components/Landing.vue'
 </script>
 
 <template>
-  <main class="pt-5 mt-5">
-    <Landing />
+  <main class="pt-5 ">
+    <Landing/>
   </main>
 </template>
 
 <style>
 main{
-  height: 150vh;
+  min-height: 100vh;
 }
 </style>
