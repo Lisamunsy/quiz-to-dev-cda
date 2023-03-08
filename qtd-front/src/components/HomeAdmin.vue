@@ -3,9 +3,15 @@
 </script>
 
 <template>
-    <div class=" bg-ligth container pt-2">
+    <div class=" bg-ligth container pt-2 text-end">
         <h1 class="display-3 py-2">
-            Testons ça !
+            Welcome back my dear admin
         </h1>
+        <p> Let's start managing QuizToDev</p>
+        <div class="row mx-auto justify-content-between text-center">
+            <div class="col-12 col-md-3">Access Management and Users</div>
+            <div class="col-12 col-md-3">Quizzes and learning progresses</div>
+            <div class="col-12 col-md-3">Knowledge sharing & Library</div>
+        </div>
     </div>
 </template>
