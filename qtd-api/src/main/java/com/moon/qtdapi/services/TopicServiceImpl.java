@@ -4,8 +4,10 @@ import java.util.Collection;
 
 import org.springframework.stereotype.Service;
 
-import com.moon.qtdapi.dtos.TopicCreateDto;
+import com.moon.qtdapi.dtos.TopicCreate;
+import com.moon.qtdapi.dtos.TopicForUpdate;
 import com.moon.qtdapi.dtos.TopicItem;
+import com.moon.qtdapi.dtos.TopicUpdate;
 import com.moon.qtdapi.entities.Topic;
 import com.moon.qtdapi.repositories.TopicRepository;
 
@@ -18,7 +20,7 @@ public class TopicServiceImpl implements TopicService {
 	}
 
 	@Override
-	public void create(TopicCreateDto inputs) {
+	public void create(TopicCreate inputs) {
 		Topic entity = new Topic();
 		entity.setName(inputs.getName());
 		Topic parentTopic = topics.getReferenceById(inputs.getParentTopicId());
@@ -29,7 +31,28 @@ public class TopicServiceImpl implements TopicService {
 
 	@Override
 	public Collection<TopicItem> getAll() {
-		return topics.findAllProjectedBy();
+		return topics.findAllProjectedByOrderById();
+	}
+
+	@Override
+	public TopicForUpdate forUpdate(Long id) {
+		return topics.findProjectedForUpdateById(id);
+	}
+
+	@Override
+	public void update(Long id, TopicUpdate inputs) {
+		Topic entity = topics.findById(id).get();
+		entity.setName(inputs.getName());
+		Topic parentTopic = topics.getReferenceById(inputs.getParentTopicId());
+		entity.setParentTopic(parentTopic);
+		topics.save(entity);
+
+	}
+
+	@Override
+	public void delete(Long id) {
+		topics.deleteById(id);
+
 	}
 
 }

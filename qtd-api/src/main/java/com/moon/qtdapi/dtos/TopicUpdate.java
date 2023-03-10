@@ -4,7 +4,7 @@ import jakarta.annotation.Nullable;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.Size;
 
-public class TopicCreateDto {
+public class TopicUpdate {
 
 	@NotBlank
 	@Size(max = 150)
@@ -31,7 +31,6 @@ public class TopicCreateDto {
 
 	@Override
 	public String toString() {
-		return "TopicCreateDto [name=" + name + ", parentTopicId=" + parentTopicId + "]";
+		return "TopicUpdate [name=" + name + ", parentTopicId=" + parentTopicId + "]";
 	}
-
 }
