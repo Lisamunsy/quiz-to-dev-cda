@@ -1,10 +1,7 @@
-<script>
-
-</script>
 
 <template>
-    <div class=" bg-ligth container pt-2 text-end">
-        <h1 class="display-3 py-2">
+    <div class=" bg-ligth container pt-2 ">
+        <h1 class="display-3 fw-normal">
             Welcome back my dear admin
         </h1>
         <p> Let's start managing QuizToDev</p>
